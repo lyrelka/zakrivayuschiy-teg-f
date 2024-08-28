@@ -13,7 +13,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-.theme-menu__button::after{
+.theme-menu__button::after {
   content: "";
   display: block;
   background-color: var(--color, #000);
@@ -126,7 +126,7 @@
   color: var(--heart-color, #ff0000);
 }
 
-.button::before{
+.button::before {
   content: "";
   display: block;
   background-color: var(--button-color, #fff);
@@ -134,7 +134,7 @@
   height: 100%;
   translate: -100% 0%;
   position: absolute;
-  transition: all 0.5s ease-in-out;
+  transition: translate 0.5s ease-in-out;
   top: 0;
   left: 0;
   mix-blend-mode: difference;
