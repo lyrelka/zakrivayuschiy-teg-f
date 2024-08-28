@@ -12,3 +12,135 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button::after{
+  content: "";
+  display: block;
+  background-color: var(--color, #000);
+  width: 0%;
+  height: 2px;
+  transition: width 0.5s;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  margin-right: 2px;
+  left: -16px;
+  animation: arrow 0.5s ease-in-out infinite;
+}
+
+@keyframes arrow {
+  0% {
+    left: -16px;
+  }
+
+  50% {
+    left: -12px;
+  }
+
+  100% {
+    left: -16px;
+  }
+}
+
+.core {
+  transition: color 0.3s linear 0.3s;
+}
+
+.main-body {
+  transition: color 0.3s linear;
+}
+
+.like-icon:hover .core {
+  color: var(--color, #000);
+  transition: color 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  color: var(--color, #000);
+  transition: color 0.3s linear 0.3s;
+}
+
+.like-icon:active .core {
+  color: var(--heart-color, #ff0000);
+  transition: color 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  color: var(--heart-color, #ff0000);
+  transition: color 0.3s linear 0.3s;
+}
+
+.is-liked .core {
+  color: var(--heart-color, #ff0000);
+  transition: color 0.3s linear;
+}
+
+.is-liked .main-body {
+  color: var(--heart-color, #ff0000);
+  transition: color 0.3s linear 0.3s;
+}
+
+.is-liked .contour {
+  color: var(--heart-color, #ff0000);
+  transition: color 0.3s linear 0.3s;
+}
+
+.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s;
+  transform-origin: 50% 50%;
+}
+
+@keyframes heart-scale {
+  60% {
+    transform: scale(1.5);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+.is-liked .sparks {
+  color: var(--heart-color, #ff0000);
+  animation: sparks-opacity 0.3s ease-in 0.3s;
+}
+
+@keyframes sparks-opacity {
+  60% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+.is-liked:hover .core,
+.is-liked:hover .main-body {
+  color: var(--heart-color, #ff0000);
+}
+
+.button::before{
+  content: "";
+  display: block;
+  background-color: var(--button-color, #fff);
+  width: 100%;
+  height: 100%;
+  translate: -100% 0%;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 99;
+}
+
+.button:hover::before {
+  translate: 0% 0%;
+}
