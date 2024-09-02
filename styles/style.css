@@ -33,17 +33,22 @@
   align-items: center;
   margin: 100px auto;
   border: 2px solid var(--color, #000);
-  font-family: PressStart2P, sans-serif;
+  font-family: var(--accent-font, PressStart2P), sans-serif;
   text-transform: uppercase;
   background-color: var(--bg-color, #fff);
   inline-size: clamp(320px, 100dvw, 700px);
-  block-size: clamp(327px, 17.4808rem + 12.6154vw, 368px);
 }
 
 .header-title {
   grid-row: 2 / span 1;
-  margin-top: 10px;
+  margin-top: 16px;
   text-align: center;
+}
+
+@media (width < 376px) {
+  .header-title {
+    margin-top: 0;
+  }
 }
 
 .header-title h1 {
@@ -56,13 +61,18 @@
 }
 
 .header__theme-menu {
+  padding: 23px 0;
   grid-row: 3 / span 1;
   margin-left: 20px;
   font-size: 14px;
 }
 
+.theme-menu__button {
+  text-transform: uppercase;
+}
+
 .theme-menu__list li:not(:last-child) {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .theme-menu__button:enabled {
@@ -102,10 +112,9 @@
 
 .card-title {
   border-bottom: 2px solid var(--color, #000);
-  padding-left: 10px;
+  padding: 2px 0 5px 10px;
   font-variation-settings: 'wght' var(--h-weight, 700);
   font-size: 18px;
-  line-height: 31px;
 }
 
 .card-img-container {
@@ -153,7 +162,7 @@
   top: 25px;
   right: 25px;
   opacity: 0.6;
-  font-family: PressStart2P, sans-serif;
+  font-family: var(--accent-font, PressStart2P), sans-serif;
   font-size: 14px;
   text-shadow:
   -1px 0 var(--bg-color, #fff), 
@@ -170,6 +179,12 @@
       text-stroke: 1px var(--bg-color, #fff);
   }
 } 
+
+@media (width < 376px) {
+  .card-img-label {
+    right: 10px;
+  }
+}
 
 .card-text-container {
   border-top: 2px solid var(--color, #000);
@@ -227,7 +242,7 @@
   position: relative;
   border: 2px solid var(--color, #000);
   overflow: hidden;
-  font-family: PressStart2P, sans-serif;
+  font-family: var(--accent-font, PressStart2P), sans-serif;
   font-size: 14px;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
@@ -250,8 +265,9 @@
   align-items: center;
   gap: 8px;
   margin: 0 auto 100px auto;
-  padding: 18px 21px 18px 19px;
+  padding: 16px 21px 16px 19px;
   background-color: var(--bg-color, #fff);
+  width: clamp(306px, 17.3942rem + 7.3846vw, 339px);
 }
 
 .save-icon {
@@ -271,7 +287,7 @@
   border: 2px solid var(--color, #000);
   padding: 30px;
   color: var(--color, #000);
-  font-family: PressStart2P, sans-serif;
+  font-family: var(--accent-font, PressStart2P), sans-serif;
   font-size: 14px;
   background-color: var(--bg-color, #fff);
 }
@@ -288,7 +304,6 @@
 .dialog-text {
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
-  
   line-height: 21px;
   text-transform: uppercase;
 }
