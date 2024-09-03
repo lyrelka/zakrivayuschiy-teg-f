@@ -61,9 +61,9 @@
 }
 
 .header__theme-menu {
-  padding: 23px 0;
   grid-row: 3 / span 1;
   margin-left: 20px;
+  padding: 23px 0;
   font-size: 14px;
 }
 
@@ -113,8 +113,8 @@
 .card-title {
   border-bottom: 2px solid var(--color, #000);
   padding: 2px 0 5px 10px;
-  font-variation-settings: 'wght' var(--h-weight, 700);
   font-size: 18px;
+  font-variation-settings: 'wght' var(--h-weight, 700);
 }
 
 .card-img-container {
@@ -210,6 +210,7 @@
   border: 2px solid transparent;
   padding: 0;
   transition: border 0.3s ease;
+  cursor: pointer;
 }
 
 .contour {
@@ -264,10 +265,16 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  width: clamp(310px, 17.2115rem + 9.2308vw, 340px);
   margin: 0 auto 100px auto;
-  padding: 16px 21px 16px 19px;
+  padding: 16px 18px;
   background-color: var(--bg-color, #fff);
-  width: clamp(306px, 17.3942rem + 7.3846vw, 339px);
+}
+
+@media (width < 376px) {
+  .svg-save-icon {
+    width: 28px;
+  }
 }
 
 .save-icon {
@@ -293,10 +300,10 @@
 }
 
 .save-dialog[open]::backdrop {
-  background-color: rgb(0 0 0 / 0.6);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
-.save-dialog .svg-save-icon {
+.dialog__save-icon {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
 }
